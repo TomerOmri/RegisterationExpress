@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Express</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+          integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="../">
+<body>
+
+<nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+    <a class="navbar-brand" href="#">Express</a>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+            </li>
+        </ul>
+
+        <div>
+            <button type="button" class="btn btn-success" onclick="window.location.href='register'">Register</button>
+            <button type="button" class="btn btn-secondary" onclick="window.location.href='login'">Login</button>
+        </div>
+
+    </div>
+</nav>
+
+
+<div class="middlePage" style="max-width: 500px; margin:0 auto;">
+    <div id="newsMsg"> </div>
+
+    <div style="margin: 2% 0"><h1> Register to Express </h1></div>
+    <form>
+        <div class="form-group">
+            <label for="name-text-input">Full Name</label>
+            <div>
+                <input class="form-control" type="text"  id="name-text-input">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="userEmail">Email address</label>
+            <input type="email" class="form-control" id="userEmail" aria-describedby="emailHelp"
+                   placeholder="Enter email">
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        </div>
+
+        <div class="form-group">
+            <label for="userPass">Password</label>
+            <input type="password" class="form-control" id="userPass" placeholder="Password">
+        </div>
+
+        <button id="registerToPlatform" type="submit" class="btn btn-primary col align-self-end">Submit</button>
+    </form>
+</div>
+
+
+</body>
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
+<script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
+        integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+        crossorigin="anonymous"></script>
+<script src="assets/js/register.js"></script>
+</html>

@@ -25,7 +25,6 @@ app.post('/register', function(req, res){ user.register(req, res); });
 // LOGIN
 app.get('/login', function(req,res){ res.sendfile('public/views/login.html') });
 
-
 var port = process.env.PORT | 3001;
 app.listen(port);
 

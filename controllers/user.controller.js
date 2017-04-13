@@ -3,13 +3,22 @@
  */
 var User = require('mongoose').model('User');
 
-
 exports.register = function(req, res){
 
-    console.log(req.body);
+    var user = new User();
+    user.name = req.body.name;
+    user.email = req.body.email;
+    user.password = req.body.password;
 
-    var user = new User(req.body);
     user.save(function(err){
+        if (err) {
+            if (err.code == 11000)
+                return res.json({success: false, message: " A user with that email already exists. "});
+            else
+                return res.send(err);
+        } else {
+            return res.json({ message: 'User created!' });
+        }
+
     });
-    res.send("ok");
 }

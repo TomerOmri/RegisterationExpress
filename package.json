@@ -4,13 +4,26 @@
   "description": "",
   "main": "app.js",
   "scripts": {
+    "start": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bcrypt-nodejs": "*",
     "body-parser": "^1.17.1",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "*",
+    "ejs": "*",
     "express": "^4.15.2",
-    "mongoose": "^4.9.2"
+    "express-session": "*",
+    "express-validator": "*",
+    "method-override": "~1.0.0",
+    "mongoose": "^4.9.2",
+    "morgan": "^1.8.1",
+    "passport": "*",
+    "passport-http": "*",
+    "passport-local": "*",
+    "path": "*"
   }
 }

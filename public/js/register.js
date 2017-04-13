@@ -20,12 +20,12 @@ $("#registerToPlatform").click(function(){
     };
 
     $.ajax({
-        url: '/register',
+        url: '/api/register',
         contentType: "application/json",
         method: 'POST',
         data: JSON.stringify(userData),
         success: function(data){
-            window.location.href='login';
+            location.replace('/login')
         },
         error: function(data){
             console.log('err');

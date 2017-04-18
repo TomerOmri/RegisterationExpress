@@ -2,11 +2,11 @@
 // ============================= INCLUDES ============================= //
 
 var express  = require('express');
-
 var port     = process.env.PORT || 3000;
 var mongoose = require('./config/mongoose');
 var passport = require('passport');
 var flash    = require('connect-flash');
+var path     = require('path');
 
 var morgan       = require('morgan');
 var cookieParser = require('cookie-parser');
@@ -23,7 +23,8 @@ var db = mongoose();
 // set up our express application
 app.use(morgan('dev')); // log every request to the console
 app.use(cookieParser()); // read cookies (needed for auth)
-app.use(bodyParser()); // get information from html forms
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}));
 
 
 // required for passport
@@ -33,27 +34,35 @@ app.use(passport.session()); // persistent login sessions
 app.use(flash()); // use connect-flash for flash messages stored in session
 
 
-
+// Routing
+// var router = require('./routes/routes.js')(app, passport);
 
 var user = require('./controllers/user.controller');
 
-// // BodyParser Middleware
-// app.use(bodyParser.json());
-// app.use(bodyParser.urlencoded({extended: true}));
-//
-// // Set Static Folder
+
+// Set Static Folder
 app.use('/', express.static(__dirname + '/public/views'));
+app.use('/style', express.static(__dirname + '/public/style'));
+app.use('/js', express.static(__dirname + '/public/js'));
 
 app.get('/register', function(req, res) {
-    res.sendFile('register.html', { root: '/public/views/'});
+    res.sendFile(path.join(__dirname, './public/views', 'register.html'));
 });
+
+app.post('/register', function(req, res){ user.register(req, res); });
+
+
+
+
+
+
 
 
 // ============================= ROUTS ============================= //
 
 app.listen(port);
 
-
+module.exports = app;
 
 
 
@@ -99,7 +108,19 @@ app.listen(port);
 //
 // var port = process.env.PORT | 3001;
 
+// // BodyParser Middleware
 
-module.exports = app;
+//
+
+
+
+
+// app.use('/', function(req, res, next){
+//    console.log("asked url: " ,req.url);
+//    next();
+// });
+
+
+
 
 

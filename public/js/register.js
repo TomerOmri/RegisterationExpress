@@ -20,7 +20,7 @@ $("#registerToPlatform").click(function(){
     };
 
     $.ajax({
-        url: '/api/register',
+        url: '/register',
         contentType: "application/json",
         method: 'POST',
         data: JSON.stringify(userData),

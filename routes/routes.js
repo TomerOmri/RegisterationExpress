@@ -5,15 +5,9 @@ var path = require ('path');
 
 module.exports = function(app, passport){
 
-    app.get('/', function(req, res){
-        res.sendfile(path.join('public/views' + '/index.html'));
+    app.get('/register', function(req, res) {
+        res.sendFile(path.join(__dirname, './public/views', 'register.html'));
     });
-
-    app.get('/login', function(req, res){
-        res.sendfile(path.join('public/views' + '/login.html'));
-    });
-
-
 
 
 }

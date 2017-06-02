@@ -1,11 +1,6 @@
 /**
  * Created by tomz on 29/03/2017.
  */
-
-
-
-
-
 $("#registerToPlatform").click(function(){
 
     var name = $("#name-text-input").val();
